@@ -2,6 +2,8 @@
 
 ## Running the code
 
+This section explains how the different scripts work. The outputs of the scripts are already in the repo, so if you don't want to query new data, you don't need to run previous commands.
+
 ### `lookup.py`
 
 This script will extract all comments from the top 100 posts for provided subreddits. The results will be stored in the `comments` directory.
@@ -31,3 +33,13 @@ This script takes the output of `lookup.py` and plots the number of comments and
 1. Install the libraries: `pip3 install matplotlib`
 2. Run `lookup.py` (instructions see above)
 3. Run the code with `python3 plots.py`
+
+### `filter.py`
+
+This script takes the output of `calculate_freqs.py` and filters it by words provided in `filterlist.txt`.
+
+1. Run `lookup.py` (instructions see above)
+2. Run `calculate_freqs.py` (instructions see above)
+3. Enter your words to filter by to `filterlist.txt`
+4. Run the code with `python3 filter.py`
+

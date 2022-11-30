@@ -13,7 +13,7 @@ def sort_dict_by_values(d, reverse=False):
     return {key: val for key, val in sorted(d.items(), key = lambda ele: ele[1], reverse=not reverse)}
 
 def tokenize_comment(c):
-    c = bytes(c, "utf-8").decode("utf-8")
+    c = repr(c).encode('utf-16', 'surrogatepass').decode('utf-16')
     c = contractions.fix(c)
     c = word_tokenize(c)
     c = [word.lower() for word in c if word.isalpha()]
@@ -63,7 +63,8 @@ if __name__ == '__main__':
         os.mkdir("./freqs")
 
     for file in files:
-        os.mkdir(f"./freqs/{file[:-5]}")
+        if not file[:-5] in os.listdir("./freqs"):
+            os.mkdir(f"./freqs/{file[:-5]}")
 
         comments = {}
         with open(f'comments/{file}', 'r') as f:
@@ -72,11 +73,9 @@ if __name__ == '__main__':
         tokenized = [{'comments': tokenize_comments(e['comments'])} for e in comments]
 
         freq = calculate_straight_freq(tokenized)
-        with open(f"./freqs/{file[:-5]}/straight_freq.json", 'w') as f:
-            f.write(json.dumps(freq))
+        with open(f"./freqs/{file[:-5]}/straight_freq.json", 'wt') as f:
+            f.write(json.dumps(freq, ensure_ascii=False))
 
         freq = calculate_weighted_freq(tokenized)
-        with open(f"./freqs/{file[:-5]}/weighted_freq.json", 'w') as f:
-            f.write(json.dumps(freq))
-
-        print(freq)
+        with open(f"./freqs/{file[:-5]}/weighted_freq.json", 'wt') as f:
+            f.write(json.dumps(freq, ensure_ascii=False))
