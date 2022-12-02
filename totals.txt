@@ -1,0 +1,8 @@
+total weight in 2022-11-30 12:08:57.725458 buddhism – straight: 89505
+total weight in 2022-11-30 12:08:57.725458 buddhism – weighted: 664080
+total weight in 2022-11-30 14:16:53.172306 christianity – straight: 516662
+total weight in 2022-11-30 14:16:53.172306 christianity – weighted: 2032236
+total weight in 2022-11-30 12:09:31.228985 hinduism – straight: 43463
+total weight in 2022-11-30 12:09:31.228985 hinduism – weighted: 245005
+total weight in 2022-11-30 12:58:06.769461 atheism – straight: 638536
+total weight in 2022-11-30 12:58:06.769461 atheism – weighted: 9256596

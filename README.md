@@ -43,3 +43,10 @@ This script takes the output of `calculate_freqs.py` and filters it by words pro
 3. Enter your words to filter by to `filterlist.txt`
 4. Run the code with `python3 filter.py`
 
+### `totals.py`
+
+This scripts sums the amount of words for all straight frequencies and the sum of all the scores for weighted frequencies. Runs on the output of `calculate_freqs.py`. A sample output can be found in `totals.txt`
+
+1. Run `lookup.py` (instructions see above)
+2. Run `calculate_freqs.py` (instructions see above)
+3. Run the code with `python3 totals.py`
